@@ -1,4 +1,3 @@
-
 ## 【Rese（飲食店予約アプリ）】  
 　～トップ画面イメージ～  
  <img width="886" alt="トップページ" src="https://github.com/user-attachments/assets/83af9e52-9f89-491d-8548-5ff231bd4f5e">
