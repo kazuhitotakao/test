@@ -107,16 +107,16 @@
 　　　※テストデータが作成されます。  
    
    　　【test用ユーザー】  
-　　　管理者　　　　→　Email：admin@sample.com　　Password：password  
-　　　店舗代表者　　→　Email：owner@sample.com　　Password：password  
-　　　一般ユーザー　→　Email：user@sample.com　　 Password：password  
+　　　`管理者　　　　→　Email：admin@sample.com　　Password：password`  
+　　　`店舗代表者　　→　Email：owner@sample.com　　Password：password`  
+　　　`一般ユーザー　→　Email：user@sample.com　　 Password：password`  
 ## 【URL】  
 #### ・開発環境  
 　　開発環境：http://localhost/  
 　　phpMyAdmin：http://localhost:8080/	  
 　　MailHog：http://localhost:8025/  
 #### ・本番環境
-　　デプロイ済のURL：https://rese-shops.com 
+　　デプロイ済のURL：https://rese-shops.com  
 　　※ＱＲコードリーダーでのカメラ使用の際にhttpsでの接続が必要だったため、独自ドメインでhttps接続をしています。
 ## 【その他】  
 #### ・開発環境と本番環境の切り分けについて  
