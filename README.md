@@ -17,9 +17,9 @@
 #### 　・権限設定  
 　　　管理者・店舗代表者・一般ユーザーに権限を分けている。  
 　　　【test用ユーザー】  
-　　　管理者　→　Email：admin@sample.com　　Password:password  
-　　　店舗代表者　→　Email：owner@sample.com　　Password:password  
-　　　管理者　→　Email：user@sample.com　　Password:password  
+　　　管理者　→　Email：admin@sample.com　　Password：password  
+　　　店舗代表者　→　Email：owner@sample.com　　Password：password  
+　　　管理者　→　Email：user@sample.com　　Password：password  
 #### 　・店舗情報作成　＆　予約確認画面（店舗代表者向け）    
 　　　店舗画像のアプロード可能  
 　　　時間帯ごとの予約枠の上限設定（店側でこのアプリから予約できる枠の指定ができます。）  
