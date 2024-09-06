@@ -19,6 +19,7 @@
 　　　管理者・店舗代表者・一般ユーザーに権限を分けている。
 　　　またゲストユーザー（権限なし）には店舗一覧のみの閲覧を可能にしている。  
 #### 　・店舗情報作成＆予約確認画面（店舗代表者用）    
+![owner-page2](https://github.com/user-attachments/assets/c61c1c55-c1b2-42e4-b319-5c7ef7e36849)  
 　　　店舗画像のアプロードと店舗情報の登録が可能（※１店舗代表者につき１店舗のみの登録としています。）  
 　　　評価★の数やコメント内容閲覧可能  
 　　　ＱＲコードリーダー起動による来店確認  
@@ -91,11 +92,11 @@
 　　　MAIL_PASSWORD=password  
 　　　MAIL_FROM_ADDRESS=info@example.com  
 
-　　　※Stripe決済機能を利用する場合、追加。公式サイトにアクセスし、それぞれ設定する。  
-　　　　https://dashboard.stripe.com/  
+　　　※Stripe決済機能のために追加。    
 　　　STRIPE_PUBLIC_KEY=
-　　　STRIPE_SECRET_KEY=
-  
+　　　STRIPE_SECRET_KEY=  
+　　　（参考）公式サイト：https://dashboard.stripe.com/  
+   
 　５　アプリケーションキーの作成  
 　　　php artisan key:generate  
   
@@ -104,13 +105,16 @@
   
 　７　シーディングの実行  
 　　　php artisan db:seed  
-　　　※テストデータが作成されます。  
-   
-   　　【test用ユーザー】  
+　　　※テストデータが作成されます。 
+
+　８　パーミッション設定  
+　　　chmod -R 777 /var/www/storage  
+
+## 【URL】  
+   　【test用ユーザー】  
 　　　`管理者　　　　→　Email：admin@sample.com　　Password：password`  
 　　　`店舗代表者　　→　Email：owner@sample.com　　Password：password`  
 　　　`一般ユーザー　→　Email：user@sample.com　　 Password：password`  
-## 【URL】  
 #### ・開発環境  
 　　開発環境：http://localhost/  
 　　phpMyAdmin：http://localhost:8080/	  
