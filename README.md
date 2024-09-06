@@ -17,11 +17,8 @@
 #### 　・マイページ機能（予約内容・お気に入り飲食店一覧）  
 　　　　※マイページから決済、予約変更、予約キャンセルが可能  
 #### 　・権限設定  
-　　　管理者・店舗代表者・一般ユーザーに権限を分けている。  
-　　　【test用ユーザー】  
-　　　管理者　　　　→　Email：admin@sample.com　　Password：password  
-　　　店舗代表者　　→　Email：owner@sample.com　　Password：password  
-　　　一般ユーザー　→　Email：user@sample.com　　 Password：password  
+　　　管理者・店舗代表者・一般ユーザーに権限を分けている。
+　　　またゲストユーザー（権限なし）には店舗一覧のみの閲覧を可能にしている。  
 #### 　・店舗情報作成＆予約確認画面（店舗代表者用）    
 　　　店舗画像のアプロードと店舗情報の登録が可能（※１店舗代表者につき１店舗のみの登録としています。）  
 　　　評価★の数やコメント内容閲覧可能  
@@ -50,7 +47,7 @@
 #### ・開発環境（Docker環境）  
 　　PHP		8.2.19  
 　　Laravel	8.83.27  
-　　MySQL	8.0.35 
+　　MySQL	8.0.35  
 　　nginx	1.22.1  
 　　MailHog（メールサーバー）　  
 　　cron （自動実行ジョブサーバー） 
@@ -86,14 +83,19 @@
  　　　または、新しく.envファイルを作成  
   
 　４　.envファイルに以下の環境変数を修正・追加  
-　　　APP_NAME=Atte  
+　　　APP_NAME=Rese  
 　　　DB_HOST=mysql  
 　　　DB_DATABASE=laravel_db  
 　　　DB_USERNAME=laravel_user  
 　　　DB_PASSWORD=laravel_pass  
 　　　MAIL_USERNAME=user  
 　　　MAIL_PASSWORD=password  
-　　　MAIL_FROM_ADDRESS=info@example.com
+　　　MAIL_FROM_ADDRESS=info@example.com  
+
+　　　※Stripe決済機能を利用する場合、追加。公式サイトにアクセスし、それぞれ設定する。  
+　　　　https://dashboard.stripe.com/  
+　　　STRIPE_PUBLIC_KEY=
+　　　STRIPE_SECRET_KEY=
   
 　５　アプリケーションキーの作成  
 　　　php artisan key:generate  
@@ -104,16 +106,19 @@
 　７　シーディングの実行  
 　　　php artisan db:seed  
 　　　※テストデータが作成されます。  
-  
+   
+   　　【test用ユーザー】  
+　　　管理者　　　　→　Email：admin@sample.com　　Password：password  
+　　　店舗代表者　　→　Email：owner@sample.com　　Password：password  
+　　　一般ユーザー　→　Email：user@sample.com　　 Password：password  
 ## 【URL】  
 #### ・開発環境  
 　　開発環境：http://localhost/  
 　　phpMyAdmin：http://localhost:8080/	  
 　　MailHog：http://localhost:8025/  
 #### ・本番環境
-　　デプロイ済のURL：http://43.207.55.116/  
-　　※開発環境・本番環境ともに、ログイン前に、メールアドレス登録を行い、登録したメールアドレスでの認証が必要。  
-
+　　デプロイ済のURL：https://rese-shops.com 
+　　※ＱＲコードリーダーでのカメラ使用の際にhttpsでの接続が必要だったため、独自ドメインでhttps接続をしています。
 ## 【その他】  
 #### ・開発環境と本番環境の切り分けについて  
 　　.env.development（開発環境） .env.production（本番環境）で切り分けを実施  
@@ -123,4 +128,4 @@
 　　開発環境ではDockerで環境構築を行っている。  
 　　メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
 　　本番環境では、AWSで環境構築を行っている。  
-　　メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
+　　メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。
