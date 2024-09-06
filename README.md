@@ -21,7 +21,7 @@
 　　　【test用ユーザー】  
 　　　管理者　　　　→　Email：admin@sample.com　　Password：password  
 　　　店舗代表者　　→　Email：owner@sample.com　　Password：password  
-　　　一般ユーザー　→　Email：user@sample.com　　Password：password  
+　　　一般ユーザー　→　Email：user@sample.com　　 Password：password  
 #### 　・店舗情報作成＆予約確認画面（店舗代表者用）    
 　　　店舗画像のアプロードと店舗情報の登録が可能（※１店舗代表者につき１店舗のみの登録としています。）  
 　　　評価★の数やコメント内容閲覧可能  
