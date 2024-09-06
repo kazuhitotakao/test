@@ -70,7 +70,7 @@
  ![table](https://github.com/user-attachments/assets/1cefeaf7-ff8a-451c-ab79-38c0fb170468)
   
 ## 【ER図】  
-<img width="443" alt="Atte_ER" src="https://github.com/kazuhitotakao/attendance/assets/158255815/05fa8f48-238e-4650-a240-f4f9adbbe589">  
+![まとめ](https://github.com/user-attachments/assets/b061c9ae-2daa-42d3-8467-399969d84057)
   
 ## 【環境構築】  
 ### ※開発環境のみ記載※  
