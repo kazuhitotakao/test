@@ -67,8 +67,7 @@
 　　cron（Amazon linux2に初期実装されている）  
   
 ## 【テーブル設計図】  
-<img width="497" alt="テーブル設計図_user" src="https://github.com/kazuhitotakao/attendance/assets/158255815/21817345-1f30-4889-9cd2-4b4b67f33009">  
-<img width="498" alt="テーブル設計図_attendances" src="https://github.com/kazuhitotakao/attendance/assets/158255815/617c30e3-17a0-4d02-bdf7-b168331bf500">  
+ ![table](https://github.com/user-attachments/assets/1cefeaf7-ff8a-451c-ab79-38c0fb170468)
   
 ## 【ER図】  
 <img width="443" alt="Atte_ER" src="https://github.com/kazuhitotakao/attendance/assets/158255815/05fa8f48-238e-4650-a240-f4f9adbbe589">  
