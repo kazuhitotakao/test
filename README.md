@@ -91,7 +91,7 @@
      ※Stripe決済機能のために追加（ = 以下を各個人で設定）  
        STRIPE_PUBLIC_KEY=  
        STRIPE_SECRET_KEY=  
-      （このサイトに登録し、KEY入手する）公式サイト：https://dashboard.stripe.com/  
+      （このサイトに登録し、KEYを取得する）公式サイト：https://dashboard.stripe.com/  
    
     ４　アプリケーションキーの作成  
        php artisan key:generate  
