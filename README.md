@@ -93,11 +93,11 @@
        STRIPE_SECRET_KEY=  
       （このサイトに登録し、KEYを取得する）公式サイト：https://dashboard.stripe.com/  
    
-    ４　アプリケーションキーの作成  
+    ４　【phpコンテナに入り】アプリケーションキーの作成  
+       docker compose exec php bash  
        php artisan key:generate  
   
-    ５　【phpコンテナに入り】マイグレーションの実行  
-       docker compose exec php bash
+    ５　【phpコンテナ内】マイグレーションの実行  
        php artisan migrate:fresh  
   
     ６　【phpコンテナ内】シーディングの実行  
