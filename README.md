@@ -18,7 +18,9 @@
        支払い方法を「クレジットカード」「コンビニ」「銀行振込」から選択・変更が可能。  
        また、商品の配送先変更も可能。
 #### 　・商品出品機能  
-       出品時に複数枚の画像をアプロードできる。また、サムネイル画像も選択可能。
+       出品時に複数枚の画像をアプロードできる。また、サムネイル画像も選択可能。  
+       ※出品時のカテゴリー項目・ブランド項目  
+         それぞれテーブルで管理しているが、現時点では最低限のものにしている。  
 #### 　・マイページ機能（出品した商品・購入した商品がわかる）  
 #### 　・プロフィール変更機能（マイページからユーザーのプロフィールを編集することができる）
        ユーザーアイコン用の画像を複数枚アプロード可能。アプロードした中から１枚選択してアイコン画像として表示。
@@ -38,9 +40,9 @@
 ## 【使用技術（実行環境）】  
 #### ・開発環境（Docker環境）  
     PHP		8.1.30  
-    Laravel	8.83.27  
-    MySQL	8.0.35  
-    nginx	1.22.1  
+    Laravel		8.83.27  
+    MySQL		8.0.35  
+    nginx		1.22.1  
     MailHog（メールサーバー）　  
   
 #### ・本番環境（AWS環境）  
@@ -50,8 +52,7 @@
     nginx		1.22.1  
     RDS（データベース）  
     S3（ストレージ）  
-    Gmail（メールサーバーとして使用）  
-    cron（Amazon linux2に初期実装されている）  
+    Gmail（メールサーバーとして使用）   
   
 ## 【テーブル設計図】  
  ![テーブル設計図完成](https://github.com/user-attachments/assets/65621758-91f1-4e5a-ac36-3731b5372e42)  
@@ -62,7 +63,7 @@
 ## 【環境構築】  
 ### ※開発環境のみ記載※  
 ### Dockerビルド  
-    １　git clone git@github.com:kazuhitotakao/Rese.git  
+    １　git clone git@github.com:kazuhitotakao/flea-market.git  
     ２　DockerDesktopアプリを立ち上げる  
     ３　docker compose up -d --build  
    
@@ -73,7 +74,7 @@
     または、新しく.envファイルを作成  
   
     ４　.envファイルに以下の環境変数を修正・追加  
-       APP_NAME=Rese  
+       APP_NAME=coachtech-flea  
        DB_HOST=mysql  
        DB_DATABASE=laravel_db  
        DB_USERNAME=laravel_user  
@@ -82,10 +83,10 @@
        MAIL_PASSWORD=password  
        MAIL_FROM_ADDRESS=info@example.com  
 
-     ※Stripe決済機能のために追加  
+     ※Stripe決済機能のために追加（ = 以下を各個人で設定）  
       STRIPE_PUBLIC_KEY=  
       STRIPE_SECRET_KEY=  
-     （参考）公式サイト：https://dashboard.stripe.com/  
+     （このサイトに登録し、入手する）公式サイト：https://dashboard.stripe.com/  
    
     ５　アプリケーションキーの作成  
       php artisan key:generate  
@@ -103,28 +104,26 @@
     ９　シンボリックリンク設定  
       php artisan storage:link  
    
-
 ## 【URL】  
    　【test用ユーザー】  
 　　　`管理者　　　　→　Email：admin@sample.com　　 Password：password`  
 　　　`一般ユーザー　→　Email：user1@sample.com　　 Password：password`  
 　　　`一般ユーザー　→　Email：user2@sample.com　　 Password：password`  
 　　　`一般ユーザー　→　Email：user3@sample.com　　 Password：password`  
+   
 #### ・開発環境  
     開発環境：http://localhost/  
     phpMyAdmin：http://localhost:8080/	  
     MailHog：http://localhost:8025/  
+    
 #### ・本番環境
-    デプロイ済のURL：http://35.79.89.150/ 
+    デプロイ済のURL：http://35.79.89.150/  
+    
 ## 【その他】  
 #### ・開発環境と本番環境の切り分けについて  
     .env.development（開発環境） .env.production（本番環境）で切り分けを実施  
     ※個人情報が記載されているため、git.ignoreに記載し、リモートリポジトリへはpushしていない  
-  
+    
 #### ・開発環境と本番環境での主な相違点  
-    開発環境ではDockerで環境構築を行っている。  
-    メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
-    本番環境では、AWSで環境構築を行っている。  
-    メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。
-
-
+    開発環境ではDockerで環境構築を行い、メールサーバーをMailHogとしている。  
+    本番環境では、AWSで環境構築を行い、メールサーバーをGmailとしている。  
