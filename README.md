@@ -55,25 +55,29 @@
     Gmail（メールサーバーとして使用）   
   
 ## 【テーブル設計図】  
- ![テーブル設計図完成](https://github.com/user-attachments/assets/65621758-91f1-4e5a-ac36-3731b5372e42)  
+ <img width="926" alt="テーブル設計図完成" src="https://github.com/user-attachments/assets/e2f39d77-d40e-45c5-9dc8-1cc6c69f87c7">  
   
 ## 【ER図】  
- ![flea_ERまとめ](https://github.com/user-attachments/assets/812624a0-d45c-4cfc-9d91-adf661b8f7e0)  
+ <img width="751" alt="flea_ERまとめ" src="https://github.com/user-attachments/assets/f5aa6ce8-bd23-4df0-9730-f2d1518ed090">  
   
 ## 【環境構築】  
 ### ※開発環境のみ記載※  
 ### Dockerビルド  
-    １　git clone git@github.com:kazuhitotakao/flea-market.git  
-    ２　DockerDesktopアプリを立ち上げる  
-    ３　docker compose up -d --build  
+    １　任意のディレクトリでリポジトリをクローン  
+        git clone git@github.com:kazuhitotakao/flea-market.git  
+    ２  flea-marketディレクトリが作成されているのでflea-marketディレクトリに移動  
+        cd flea-market  
+    ３　DockerDesktopアプリを立ち上げる  
+    ４　docker compose up -d --build  
    
 ### Laravel環境構築   
-    １　docker compose exec php bash  
-    ２　composer install  
-    ３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
-    または、新しく.envファイルを作成  
-  
-    ４　.envファイルに以下の環境変数を修正・追加  
+    １　【phpコンテナに入り】各種パッケージのインストール  
+        docker compose exec php bash  
+        composer install  
+    ２　phpコンテナ内から抜けて、srcディレクリに移動し、「.env」ファイルを作成
+        cd src  
+        cp .env.example .env  
+    ３　.envファイルに以下の環境変数を修正・追加  
        APP_NAME=coachtech-flea  
        DB_HOST=mysql  
        DB_DATABASE=laravel_db  
@@ -84,25 +88,26 @@
        MAIL_FROM_ADDRESS=info@example.com  
 
      ※Stripe決済機能のために追加（ = 以下を各個人で設定）  
-      STRIPE_PUBLIC_KEY=  
-      STRIPE_SECRET_KEY=  
-     （このサイトに登録し、入手する）公式サイト：https://dashboard.stripe.com/  
+       STRIPE_PUBLIC_KEY=  
+       STRIPE_SECRET_KEY=  
+      （このサイトに登録し、入手する）公式サイト：https://dashboard.stripe.com/  
    
-    ５　アプリケーションキーの作成  
-      php artisan key:generate  
+    ４　アプリケーションキーの作成  
+       php artisan key:generate  
   
-    ６　マイグレーションの実行  
-      php artisan migrate:fresh  
+    ５　【phpコンテナに入り】マイグレーションの実行  
+       docker compose exec php bash
+       php artisan migrate:fresh  
   
-    ７　シーディングの実行  
-      php artisan db:seed  
-      ※テストデータが作成される 
+    ６　【phpコンテナ内】シーディングの実行  
+       php artisan db:seed  
+       ※初期データの作成（デモ用のデータ）  
 
-    ８　パーミッション設定  
-      chmod -R 777 /var/www/storage  
+    ７　【phpコンテナ内】パーミッション設定  
+       chmod -R 777 /var/www/storage  
 
-    ９　シンボリックリンク設定  
-      php artisan storage:link  
+    ８　【phpコンテナ内】シンボリックリンク設定  
+       php artisan storage:link  
    
 ## 【URL】  
    　【test用ユーザー】  
