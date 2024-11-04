@@ -75,6 +75,7 @@
         docker compose exec php bash  
         composer install  
     ２　phpコンテナ内から抜けて、srcディレクリに移動し、「.env」ファイルを作成
+        exit
         cd src  
         cp .env.example .env  
     ３　.envファイルに以下の環境変数を修正・追加  
